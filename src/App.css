@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  /* height screen */
+  height: 100vh;
+  width: 100vw;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 20px 15px lightgray;
+  animation: 1s fadeIn ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pricing-table-left {
+  width: 400px;
+  height: 572px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.pricing-table-right {
+  width: 400px;
+  height: 572px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.pricing-table-middle {
+  width: 432px;
+  height: 572px;
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pricing-table-middle-dark {
+  background-color: #0b0641;
+  color: white;
+  transform: translateY(-40px);
+  animation: 2s slide ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+.title-container {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.title {
+  padding-left: 16px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #0b0914;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  gap: 24px;
+}
+
+.description-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 352px;
+  height: 148px;
+}
+
+.description-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 281px;
+  height: 244px;
+}
+
+.description-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 352px;
+  height: 292px;
+}
+
+.description-title {
+  color: #a9a9aa;
+  font-size: 22px;
+}
+
+.description-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+.description-list label {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #35353f;
+}
+
+.divider {
+  width: 352px;
+  border: 1px dashed #a9a9aa;
+  margin-top: 16px;
+  height: 0px;
+}
+
+.divider-middle {
+  width: 336px;
+  border: 1px dashed #a9a9aa;
+  margin-top: 16px;
+  height: 0px;
+}
+
+.pricing-table-left-bottom {
+  margin-top: 160px;
+  width: 352px;
+  height: 40px;
+  margin-bottom: 24px;
+}
+
+.pricing-table-left-bottom p {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #0b0914;
+  margin-bottom: 24px;
+}
+
+.pricing-table-right-bottom {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pricing-table-middle-bottom {
+  margin-top: 64px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+strong {
+  margin-top: 15px;
+}
+
+.pricing-table-middle-bottom p {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.pricing-table-right-bottom p {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #0b0914;
+}
+
+button {
+  width: 352px;
+  height: 64px;
+  background-color: #fff5fa;
+  border-radius: 12px;
+  border: none;
+}
+
+button label {
+  color: #ff1d89;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+}
+button label:hover {
+  text-decoration: underline;
+}
+
+.pricing-table-middle-dark {
+  width: 384px;
+  height: 572px;
+  border-radius: 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.pricing-table-middle-dark-spacing {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.dark {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.shadow-button {
+  height: 64px;
+  width: 336px;
+
+  background-color: #ff1d89;
+  box-shadow: 0px 12px 32px rgba(255, 29, 137, 0.5);
+  border-radius: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.shadow-button label {
+  color: white;
+}
+
+.checked-svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .pricing-table-left {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
